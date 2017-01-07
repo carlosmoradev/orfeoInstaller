@@ -12,6 +12,7 @@ DBUSER="orfeo_user"
 DBPASSWORD="0rf30**$$"
 INSTALLDIR="$LOCAL/orfeo384/instalacion"
 PHPDIR="/etc/php/5.6/apache2"
+POSTGRESQLDIR="/etc/postgresql/9.5/main"
 ###############################################################################
 apt-get update
 apt-get upgrade -y
@@ -35,9 +36,11 @@ echo  "Cargando la base de datos base "
 sleep 3
 
 sudo -u postgres psql -c "\c $DBNAME;"
-sudo -u postgres psql -c "\i $INSTALLDIR/dborfeo384.sql;"
+#sudo -u postgres psql -c "\i $INSTALLDIR/dborfeo384.sql;"
+psql -h localhost -p 5432 -U orfeo_user -d dborfeo384 < $INSTALLDIR/dborfeo384.sql
 sudo -u postgres psql -c "update usuario set usua_nuevo=0 where usua_login='ADMON';"
 
-cat $INSTALLDIR/phpBase.ini > $PHPDIR/php.ini; service apache2 restart
+cat $INSTALLDIR/phpBase.ini > $PHPDIR/php.ini; /etc/init.d/apache2 restart
+cat $INSTALLDIR/pg_hba.conf > $POSTGRESQLDIR/pg_hba.conf; /etc/init.d/postgresql restart
 #clear
 echo  "Instalacion de orfeo Finalizada."
