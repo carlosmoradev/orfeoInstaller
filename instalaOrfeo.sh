@@ -35,9 +35,7 @@ sudo -u postgres psql -c "CREATE DATABASE $DBNAME WITH OWNER $DBUSER;"
 echo  "Cargando la base de datos base "
 sleep 3
 
-sudo -u postgres psql -c "\c $DBNAME;"
-#sudo -u postgres psql -c "\i $INSTALLDIR/dborfeo384.sql;"
-psql -h localhost -p 5432 -U orfeo_user -d dborfeo384 < $INSTALLDIR/dborfeo384.sql
+sudo -u postgres $DBNAME psql -c "\i $INSTALLDIR/dborfeo384.sql;"
 sudo -u postgres psql -c "update usuario set usua_nuevo=0 where usua_login='ADMON';"
 
 cat $INSTALLDIR/phpBase.ini > $PHPDIR/php.ini; /etc/init.d/apache2 restart
