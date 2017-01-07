@@ -11,7 +11,7 @@ DBNAME="orfeo384"
 DBUSER="orfeo_user"
 DBPASSWORD="0rf30**$$"
 INSTALLDIR="$LOCAL/instalacion"
-PHPDIR=""
+PHPDIR="/etc/php/5.6/apache2"
 ###############################################################################
 apt-get update
 apt-get upgrade -y
