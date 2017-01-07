@@ -36,7 +36,7 @@ echo  "Cargando la base de datos base "
 sleep 3
 
 sudo -u postgres psql $DBNAME -c "\i $INSTALLDIR/dborfeo384.sql;"
-sudo -u postgres psql -c "update usuario set usua_nuevo=0 where usua_login='ADMON';"
+sudo -u postgres psql $DBNAME -c "update usuario set usua_nuevo=0 where usua_login='ADMON';"
 
 cat $INSTALLDIR/phpBase.ini > $PHPDIR/php.ini; /etc/init.d/apache2 restart
 cat $INSTALLDIR/pg_hba.conf > $POSTGRESQLDIR/pg_hba.conf; /etc/init.d/postgresql restart
