@@ -35,6 +35,9 @@ sleep 2
 chown www-data:www-data $REPOSITORIO -Rv
 cp index.html index.html.preOrfeo
 
+cat $REPOSITORIO/index.html > $LOCAL/index.html
+
+
 echo  "A continuacion se va a crear la base de datos"
 sleep 3
 cd /tmp
