@@ -1,0 +1,15 @@
+###########################################################################
+###                                                             	###
+###                         ADVERTENCIA                             	###
+###                                                                 	###
+### 	Este instalador esta diseñado para escenarios especificos donde	###
+###	no hay nada aun en produccion.  Se presume que esta usando	###
+###	Ubuntu 16.04 sin ninguna aplicacion en produccion.		###
+###									###
+###	Si usted tiene alguna aplicacion web o servidor postgresql	###
+###	en este servidor, DEBE DETENER ESTE PROCESO.			###
+###									###
+###	Al continuar con este proceso usted tiene claro que se modifi-	###
+###	caran archivos de configuracion de Apache y PostgreSQL.		###
+###									###
+###########################################################################
