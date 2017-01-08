@@ -56,5 +56,10 @@ cat $INSTALLDIR/phpBase.ini > $PHPDIR/php.ini; /etc/init.d/apache2 restart
 
 cp $POSTGRESQLDIR/pg_hba.conf	$POSTGRESQLDIR/pg_hba.conf.preOrfeo
 cat $INSTALLDIR/pg_hba.conf > $POSTGRESQLDIR/pg_hba.conf; /etc/init.d/postgresql restart
-#clear
+cd
+clear
 echo  "Instalacion de orfeo Finalizada."
+echo
+echo
+SERVIDOR=$(ifconfig  | grep inet| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}' |head -n 1)
+echo "Ingrese a su servidor en la direccion: http://$SERVIDOR"
