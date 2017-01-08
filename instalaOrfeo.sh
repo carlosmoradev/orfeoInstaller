@@ -32,10 +32,10 @@ cd $LOCAL
 echo  "Comienza la descarga del repositorio $REPOSITORIO"
 git clone $REPOSITORIO
 sleep 2
-chown www-data:www-data $REPOSITORIO -Rv
+chown www-data:www-data $LOCAL -Rv
 cp index.html index.html.preOrfeo
 
-cat $REPOSITORIO/index.html > $LOCAL/index.html
+cat $INSTALLDIR/index.html > $LOCAL/index.html
 
 
 echo  "A continuacion se va a crear la base de datos"
