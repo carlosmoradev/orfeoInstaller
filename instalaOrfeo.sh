@@ -17,7 +17,21 @@ POSTGRESQLDIR="/etc/postgresql/9.5/main"
 ###############################################################################
 echo
 echo
-cat $(pwd)/advertencia.txt
+echo ##########################################################################
+echo ###                                                                    ###
+echo ###                         ADVERTENCIA                                ###
+echo ###                                                                    ###
+echo ### Este instalador esta diseñado para escenarios especificos donde    ###
+echo ### no hay nada aun en produccion.  Se presume que esta usando         ###
+echo ### Ubuntu 16.04 sin ninguna aplicacion en produccion.                 ###
+echo ###                                                                    ###
+echo ### Si usted tiene alguna aplicacion web o servidor postgresql         ###
+echo ### en este servidor, DEBE DETENER ESTE PROCESO.                       ###
+echo ###                                                                    ###
+echo ### Al continuar con este proceso usted tiene claro que se modificaran ###
+echo ###  caran archivos de configuracion de Apache y PostgreSQL.           ###
+echo ###                                                                    ###
+echo ##########################################################################
 
 
 
