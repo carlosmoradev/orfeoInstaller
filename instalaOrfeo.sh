@@ -32,7 +32,7 @@ echo "### Si usted tiene alguna aplicacion web o servidor postgresql         ###
 echo "### en este servidor, DEBE DETENER ESTE PROCESO.                       ###"
 echo "###                                                                    ###"
 echo "### Al continuar con este proceso usted tiene claro que se modificaran ###"
-echo "### archivos de configuracion de Apache y PostgreSQL.           	     ###"
+echo "### archivos de configuracion de Apache y PostgreSQL.    	             ###"
 echo "###                                                                    ###"
 echo "##########################################################################"
 sleep 10
