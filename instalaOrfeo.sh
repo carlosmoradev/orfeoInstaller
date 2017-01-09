@@ -35,7 +35,7 @@ echo "### Al continuar con este proceso usted tiene claro que se modificaran ###
 echo "###  caran archivos de configuracion de Apache y PostgreSQL.           ###"
 echo "###                                                                    ###"
 echo "##########################################################################"
-
+sleep 10
 
 
 
