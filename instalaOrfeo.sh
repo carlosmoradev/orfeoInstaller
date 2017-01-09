@@ -15,28 +15,30 @@ PHPDIR="/etc/php/5.6/apache2"
 POSTGRESQLDIR="/etc/postgresql/9.5/main"
 
 ###############################################################################
-echo
-echo
-echo ##########################################################################
-echo ###                                                                    ###
-echo ###                         ADVERTENCIA                                ###
-echo ###                                                                    ###
-echo ### Este instalador esta diseñado para escenarios especificos donde    ###
-echo ### no hay nada aun en produccion.  Se presume que esta usando         ###
-echo ### Ubuntu 16.04 sin ninguna aplicacion en produccion.                 ###
-echo ###                                                                    ###
-echo ### Si usted tiene alguna aplicacion web o servidor postgresql         ###
-echo ### en este servidor, DEBE DETENER ESTE PROCESO.                       ###
-echo ###                                                                    ###
-echo ### Al continuar con este proceso usted tiene claro que se modificaran ###
-echo ###  caran archivos de configuracion de Apache y PostgreSQL.           ###
-echo ###                                                                    ###
-echo ##########################################################################
-
-
 
 apt-get update
 apt-get upgrade -y
+echo
+echo
+echo "##########################################################################"
+echo "###                                                                    ###"
+echo "###                         ADVERTENCIA                                ###"
+echo "###                                                                    ###"
+echo "### Este instalador esta diseñado para escenarios especificos donde    ###"
+echo "### no hay nada aun en produccion.  Se presume que esta usando         ###"
+echo "### Ubuntu 16.04 sin ninguna aplicacion en produccion.                 ###"
+echo "###                                                                    ###"
+echo "### Si usted tiene alguna aplicacion web o servidor postgresql         ###"
+echo "### en este servidor, DEBE DETENER ESTE PROCESO.                       ###"
+echo "###                                                                    ###"
+echo "### Al continuar con este proceso usted tiene claro que se modificaran ###"
+echo "###  caran archivos de configuracion de Apache y PostgreSQL.           ###"
+echo "###                                                                    ###"
+echo "##########################################################################"
+
+
+
+
 
 add-apt-repository ppa:ondrej/php; apt-get update; apt-get install php5.6-pgsql postgresql apache2 libgda-5.0-postgres   postgresql-common  postgresql-client-common libpg-perl postgresql postgresql-client php5.6 libapache2-mod-php5.6 php5.6-curl php5.6-gd php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-xmlrpc php5.6-pgsql php5.6-xsl  php5.6-imap php5.6-sqlite3 php5.6-ldap php5.6-zip zip git -y
 
