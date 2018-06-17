@@ -3,8 +3,6 @@
 # Script para realizar la instalacion base de orfeo
 #Contacto@carlosmora.biz
 
-###############################################################################
-
 REPOSITORIO="https://github.com/cmmora/orfeo384.git"    #Repositorio github
 LOCAL="/var/www/html"
 DBNAME="dborfeo384"
@@ -14,17 +12,11 @@ INSTALLDIR="$LOCAL/orfeo384/instalacion"
 PHPDIR="/etc/php/5.6/apache2"
 POSTGRESQLDIR="/etc/postgresql/9.5/main"
 
-###############################################################################
-
-apt-get update
-apt-get upgrade -y
+apt-get update && apt-get upgrade -y
 
 echo  "Por favor lea con mucha atencion el siguiente mensaje: \n"
 
-cat advertencia.txt 
-
-
-sleep 10
+cat advertencia.txt && sleep 10
 
 add-apt-repository ppa:ondrej/php; apt-get update; apt-get install php5.6-pgsql postgresql apache2 libgda-5.0-postgres   postgresql-common  postgresql-client-common libpg-perl postgresql postgresql-client php5.6 libapache2-mod-php5.6 php5.6-curl php5.6-gd php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-xmlrpc php5.6-pgsql php5.6-xsl  php5.6-imap php5.6-sqlite3 php5.6-ldap php5.6-zip zip git -y
 
@@ -57,10 +49,8 @@ cat $INSTALLDIR/phpBase.ini > $PHPDIR/php.ini; /etc/init.d/apache2 restart
 
 cp $POSTGRESQLDIR/pg_hba.conf	$POSTGRESQLDIR/pg_hba.conf.preOrfeo
 cat $INSTALLDIR/pg_hba.conf > $POSTGRESQLDIR/pg_hba.conf; /etc/init.d/postgresql restart
-cd
-clear
+cd && clear
 echo  "Instalacion de orfeo Finalizada."
-echo
 echo
 SERVIDOR=$(ifconfig  | grep inet| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}' |head -n 1)
 echo "Ingrese a su servidor en la direccion: http://$SERVIDOR"
