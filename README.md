@@ -5,10 +5,10 @@ Script de instalación para la plataforma de Gestion Documental OrfeoGPL
 El objetivo de este script es lograr una instalacion agil para La Plataforma
 de Gestion Documental ORFEO GPL.
 
-Esta es la primera version y solo esta verificada para Ubuntu 16.04.
+Esta version esta optimizada para Ubuntu 18.04.
 
-Posteriormente se evaluara la opcion de ampliarlo a otras distribuciones.
-Todo depende de cuales son las distribuciones mas usadas para implementar
-orfeo.
+Por ahora no se evaluara la opcion de extenderlo a otras distribuciones.
 
-- [] Validar version del sistema operativo
+Si desea que sea ampliado a otras distribuciones, simplemente solicitelo abriendo un issue o escribame a orfeo@carlosmora.biz.
+
+- [x] ~~Validar version del sistema operativo~~
