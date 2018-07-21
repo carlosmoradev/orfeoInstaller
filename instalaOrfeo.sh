@@ -3,7 +3,7 @@
 # Script para realizar la instalacion base de orfeo
 #Contacto@carlosmora.biz
 
-REPOSITORIO="https://github.com/cmmora/orfeo384.git"    #Repositorio github
+REPOSITORIO="http://git.correlibre.org/publico/orfeo4.5.git"    #Repositorio Correlibre
 LOCAL="/var/www/html"
 DBNAME="dborfeo384"
 DBUSER="orfeo_user"
