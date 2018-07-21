@@ -5,12 +5,16 @@
 
 REPOSITORIO="http://git.correlibre.org/publico/orfeo4.5.git"    #Repositorio Correlibre
 LOCAL="/var/www/html"
-DBNAME="dborfeo384"
+DBNAME="dborfeo45"
 DBUSER="orfeo_user"
 DBPASSWORD="0rf30**$$"
-INSTALLDIR="$LOCAL/orfeo384/instalacion"
+INSTALLDIR="$LOCAL/orfeo4.5/instalacion"
 PHPDIR="/etc/php/5.6/apache2"
-POSTGRESQLDIR="/etc/postgresql/9.5/main"
+POSTGRESQLDIR="/etc/postgresql/9.6/main"
+
+
+sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
 
 apt-get update && apt-get upgrade -y
 
@@ -18,7 +22,9 @@ echo  "Por favor lea con mucha atencion el siguiente mensaje: \n"
 
 cat advertencia.txt && sleep 10
 
-add-apt-repository ppa:ondrej/php; apt-get update; apt-get install php5.6-pgsql postgresql apache2 libgda-5.0-postgres   postgresql-common  postgresql-client-common libpg-perl postgresql postgresql-client php5.6 libapache2-mod-php5.6 php5.6-curl php5.6-gd php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-xmlrpc php5.6-pgsql php5.6-xsl  php5.6-imap php5.6-sqlite3 php5.6-ldap php5.6-zip zip git -y
+
+
+add-apt-repository ppa:ondrej/php; apt-get update; apt-get install php5.6-pgsql postgresql-9.6 apache2 libgda-5.0-postgres   postgresql-common  postgresql-client-common libpg-perl postgresql postgresql-client-9.6 php5.6 libapache2-mod-php5.6 php5.6-curl php5.6-gd php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-xmlrpc php5.6-pgsql php5.6-xsl  php5.6-imap php5.6-sqlite3 php5.6-ldap php5.6-zip zip git -y
 
 cd $LOCAL
 
@@ -41,7 +47,7 @@ sudo -u postgres psql -c "CREATE DATABASE $DBNAME WITH OWNER $DBUSER;"
 echo  "Cargando la base de datos inicial"
 sleep 3
 
-sudo -u postgres psql $DBNAME -c "\i $INSTALLDIR/dborfeo384.sql;"
+sudo -u postgres psql $DBNAME -c "\i $INSTALLDIR/bd/20170609_baseOrfeo45.sql;"
 sudo -u postgres psql $DBNAME -c "update usuario set usua_nuevo=0 where usua_login='ADMON';"
 
 cp $PHPDIR/php.ini $PHPDIR/php.ini.preOrfeo
